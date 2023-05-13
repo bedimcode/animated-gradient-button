@@ -8,11 +8,11 @@
   --first-color: hsl(260, 100%, 50%);
   --second-color: hsl(190, 100%, 50%);
   --third-color: hsl(54, 100%, 50%);
-  --fourth-color: hsl(215, 100%, 50%);
+  --fourth-color: hsl(210, 100%, 50%);
   --button-color: hsl(260, 16%, 8%);
   --text-color: #fff;
   --body-color: hsl(260, 24%, 6%);
-
+  
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Poppins", sans-serif;
@@ -30,7 +30,6 @@ body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
-  color: var(--text-color);
 }
 
 a {
@@ -38,15 +37,95 @@ a {
 }
 
 /*=============== BUTTON ===============*/
+.container {
+  height: 100vh;
+  margin-inline: 1.5rem;
+  display: grid;
+  place-items: center;
+}
 
-
-/* Button shapes */
-
-
-/* Button shadow */
-
-
-/* Show shadow */
-
+.button {
+  position: relative;
+}
+.button__content {
+  position: relative;
+  background-color: var(--button-color);
+  padding: 1rem 3rem;
+  border-radius: 4rem;
+  color: var(--text-color);
+  font-weight: 600;
+  overflow: hidden;
+}
+.button__text {
+  position: relative;
+  z-index: 10;
+}
+.button__content div {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  filter: blur(12px);
+}
+.button__shape-1 {
+  background-color: var(--first-color);
+  transform: translate(-48px, -16px);
+  animation: shape-1 6s 1s ease-out infinite;
+}
+.button__shape-2 {
+  background-color: var(--second-color);
+  transform: translate(-12px, 16px);
+  animation: shape-2 6s ease-in infinite;
+}
+.button__shape-3 {
+  background-color: var(--third-color);
+  transform: translate(20px, -16px);
+  animation: shape-3 6s ease-out infinite;
+}
+.button__shape-4 {
+  background-color: var(--fourth-color);
+  transform: translate(48px, 16px);
+  animation: shape-4 6s 1s ease-in infinite;
+}
+.button__shadow {
+  width: 80%;
+  height: 1rem;
+  background: linear-gradient(80deg, var(--first-color) 10%, var(--second-color) 30%, var(--third-color) 60%, var(--fourth-color) 90%);
+  border-radius: 4rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: -2px;
+  z-index: -1;
+  filter: blur(12px);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.button:hover .button__shadow {
+  opacity: 1;
+}
 
 /* Animate shapes */
+@keyframes shape-1 {
+  33% {
+    transform: translate(-28px, 0);
+  }
+}
+@keyframes shape-2 {
+  33% {
+    transform: translate(-28px, 28px);
+  }
+}
+@keyframes shape-3 {
+  33% {
+    transform: translate(20px, 4px);
+  }
+}
+@keyframes shape-4 {
+  33% {
+    transform: translate(48px, 0);
+  }
+}

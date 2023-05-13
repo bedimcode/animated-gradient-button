@@ -1,0 +1,20 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root{
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --first-color: hsl(260, 100%, 50%);
+    --second-color: hsl(190, 100%, 50%);
+    --third-color: hsl(54, 100%, 50%);
+    --fourth-color: hsl(210, 100%, 50%);
+    --button-color: hsl(260, 16%, 8%);
+    --text-color: #fff;
+    --body-color: hsl(260, 24%, 6%);
+
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: 'Poppins', sans-serif;
+    --normal-font-size: 1rem;
+}
